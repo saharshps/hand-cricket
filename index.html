@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏏 Hand Cricket Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🏏 Hand Cricket</h1>
+            <div class="game-mode">
+                <button id="tossBtn" class="toss-btn">Start Game</button>
+            </div>
+        </header>
+
+        <div class="overs-section" id="oversSection" style="display: none;">
+            <h2>🏏 Select Overs</h2>
+            <p>Choose number of overs for the match</p>
+            <div class="overs-buttons">
+                <button class="overs-btn" data-overs="2">2 Overs</button>
+                <button class="overs-btn" data-overs="3">3 Overs</button>
+                <button class="overs-btn" data-overs="5">5 Overs</button>
+            </div>
+        </div>
+
+        <div class="toss-section" id="tossSection" style="display: none;">
+            <h2>🪙 Toss Time!</h2>
+            <p>Choose Heads or Tails</p>
+            <div class="toss-buttons">
+                <button class="toss-choice" data-choice="heads">Heads</button>
+                <button class="toss-choice" data-choice="tails">Tails</button>
+            </div>
+            <div id="tossResult" class="toss-result"></div>
+        </div>
+
+        <div class="choice-section" id="choiceSection" style="display: none;">
+            <h2>🏏 Choose Your Option</h2>
+            <p>What would you like to do?</p>
+            <div class="choice-buttons">
+                <button class="choice-btn" data-choice="bat">🏏 Bat</button>
+                <button class="choice-btn" data-choice="ball">⚾ Ball</button>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard" style="display: none;">
+            <div class="scoreboard">
+                <div class="team-score">
+                    <div class="player-section">
+                        <h3>👤 You</h3>
+                        <div class="score-display">
+                            <span class="score" id="playerScore">0</span>
+                            <span class="wickets">/<span id="playerWickets">0</span></span>
+                        </div>
+                        <div class="overs">Overs: <span id="playerOvers">0.0</span>/<span id="maxOvers">2</span></div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="computer-section">
+                        <h3>🤖 Computer</h3>
+                        <div class="score-display">
+                            <span class="score" id="computerScore">0</span>
+                            <span class="wickets">/<span id="computerWickets">0</span></span>
+                        </div>
+                        <div class="overs">Overs: <span id="computerOvers">0.0</span>/<span id="maxOversComp">2</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-status">
+                <div class="current-innings" id="currentInnings">First Innings - You are batting</div>
+                <div class="target" id="target" style="display: none;">Target: <span id="targetScore">0</span></div>
+            </div>
+
+            <div class="choices-display">
+                <div class="choice-section">
+                    <h4>Your Choice</h4>
+                    <div class="choice-display" id="userChoice">?</div>
+                </div>
+                <div class="choice-section">
+                    <h4>Computer Choice</h4>
+                    <div class="choice-display" id="compChoice">?</div>
+                </div>
+            </div>
+
+            <div class="number-buttons">
+                <button class="number-btn" id="b0" data-value="0">0</button>
+                <button class="number-btn" id="b1" data-value="1">1</button>
+                <button class="number-btn" id="b2" data-value="2">2</button>
+                <button class="number-btn" id="b3" data-value="3">3</button>
+                <button class="number-btn" id="b4" data-value="4">4</button>
+                <button class="number-btn" id="b5" data-value="5">5</button>
+                <button class="number-btn" id="b6" data-value="6">6</button>
+            </div>
+
+            <div class="game-log" id="gameLog">
+                <h4>Game Log</h4>
+                <div class="log-content" id="logContent"></div>
+            </div>
+        </div>
+
+        <div class="game-result" id="gameResult" style="display: none;">
+            <div class="result-content">
+                <h2 id="resultTitle"></h2>
+                <div id="resultDetails"></div>
+                <button id="playAgainBtn" class="play-again-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
